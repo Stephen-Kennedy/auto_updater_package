@@ -1,4 +1,6 @@
 import os
+import subprocess
+
 from .logging_utils import setup_logger
 from .command_utils import run_command
 from .email_utils import send_email
