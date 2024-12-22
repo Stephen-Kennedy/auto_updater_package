@@ -21,7 +21,7 @@ A Python package designed to manage automatic updates for different programs and
    ```
 - Run the auto-update script:
    ```bash
-   python main_auto_update.py
+   python main_apt_update.py
    ```
 
 ## Author
@@ -31,5 +31,5 @@ Stephen J Kennedy
 ### Pi-hole Update Script
 - Run the Pi-hole update script:
   ```bash
-  python main_update_pihole.py
+  python main_pihole_update.py
   ```
