@@ -10,6 +10,7 @@ setup(
         "console_scripts": [
             "postfix-setup=postfix_manager.postfix_setup:main",
             "auto-update=postfix_manager.auto_update:main",
+            "update-pihole=postfix_manager.update_pihole:update_pihole",
         ],
     },
     description="AutoUpdater with Email Notifications",
