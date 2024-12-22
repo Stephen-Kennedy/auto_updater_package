@@ -39,3 +39,5 @@ def update_pihole():
             f"An error occurred while updating Pi-hole.\n\nError: {e}",
             logger
         )
+def main():
+    update_pihole()

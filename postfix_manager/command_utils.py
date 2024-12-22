@@ -1,7 +1,6 @@
 # command_utils module
 import subprocess
 
-
 def run_command(command, logger=None, sudo=False, timeout=600):
     """Run shell command securely and log output."""
     try:
@@ -17,7 +16,7 @@ def run_command(command, logger=None, sudo=False, timeout=600):
         )
         if logger:
             logger.info(f"Command executed successfully: {' '.join(command)}")
-        return result.stdout.strip()
+        return result.stdout.strip(), result.stderr.strip()
     except subprocess.TimeoutExpired:
         if logger:
             logger.error(f"Command timed out: {' '.join(command)}")
