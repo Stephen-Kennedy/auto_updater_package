@@ -1,4 +1,4 @@
-# command_utils
+# command_utils module
 import subprocess
 
 
