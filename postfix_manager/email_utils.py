@@ -22,9 +22,10 @@ def send_email(from_email, to_email, smtp_server, email_password, subject, body,
         # Add hostname to the email body
         hostname = socket.gethostname()
         full_body = f"{body}\n\nSent from hostname: {hostname}"
-
+        full_subject = f"{hostname} server: {subject}"
+        
         msg = MIMEText(full_body)
-        msg['Subject'] = subject
+        msg['Subject'] = full_subject
         msg['From'] = from_email
         msg['To'] = to_email
 
