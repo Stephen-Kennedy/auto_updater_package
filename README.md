@@ -11,6 +11,7 @@ A Python package designed to manage automatic updates for different programs and
 1. Clone or download this repository.
 2. Install the package:
    ```bash
+   sudo apt-intall pip
    pip install .
    ```
 
