@@ -16,7 +16,7 @@ A Python package designed to manage automatic updates for different programs and
    ```
 
 ## Usage
-- Run the Postfix setup script:
+- Run the Postfix setup script with elevated permissions:
    ```bash
    python main_postfix_setup.py
    ```
