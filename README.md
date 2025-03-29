@@ -18,15 +18,15 @@ A Python package designed to manage automatic updates for different programs and
 ## Usage
 - Run the Postfix setup script with elevated permissions:
    ```bash
-   python main_postfix_setup.py
+   python3 main_postfix_setup.py
    ```
 - Run the Postfix purge script to clear out Postfix configuration:
    ```bash
-   python main_postfix_purge.py
+   python3 main_postfix_purge.py
    ```
 - Run the auto-update script:
    ```bash
-   python main_apt_update.py
+   python3 main_apt_update.py
    ```
 
 ## Author
