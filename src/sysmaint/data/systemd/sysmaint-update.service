@@ -1,0 +1,30 @@
+[Unit]
+Description=sysmaint weekly maintenance run
+Documentation=https://github.com/Stephen-Kennedy/sysmaint
+# Wait for the network so apt mirrors are reachable; without this the
+# service can fire on a freshly-booted box before NetworkManager is up.
+After=network-online.target
+Wants=network-online.target
+# Avoid stepping on apt's lock if another package operation is in flight.
+ConditionPathExists=!/var/lib/dpkg/lock-frontend
+
+[Service]
+Type=oneshot
+# Run as root because apt does. The script's require_root() will refuse
+# any other user with a clear error message.
+User=root
+Group=root
+# Slightly nicer scheduling: don't fight with interactive workloads.
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=5
+# Cap the run — runaway apt should not hang a box for hours.
+TimeoutStartSec=2h
+ExecStart=/usr/local/bin/sysmaint update
+# StandardOutput=journal is the default but be explicit so operators
+# know `journalctl -u sysmaint-update.service` will have the output.
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
