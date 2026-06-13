@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "sysmaint"
-version = "1.0.0"
+version = "1.0.1"
 description = "Fleet-deployable Linux server maintenance CLI with email notifications via Gmail SMTP relay"
 readme = "README.md"
 requires-python = ">=3.10"
