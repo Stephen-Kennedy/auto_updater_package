@@ -41,8 +41,8 @@ dev = [
 sysmaint = "sysmaint.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/Stephen-Kennedy/sysmaint"
-Issues = "https://github.com/Stephen-Kennedy/sysmaint/issues"
+Homepage = "https://github.com/Stephen-Kennedy/auto_updater_package"
+Issues = "https://github.com/Stephen-Kennedy/auto_updater_package/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/sysmaint"]

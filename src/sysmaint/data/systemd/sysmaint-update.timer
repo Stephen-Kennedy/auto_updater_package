@@ -1,6 +1,6 @@
 [Unit]
 Description=Run sysmaint weekly maintenance every Sunday
-Documentation=https://github.com/Stephen-Kennedy/sysmaint
+Documentation=https://github.com/Stephen-Kennedy/auto_updater_package
 
 [Timer]
 # Every Sunday at 03:00 + up to 2h jitter. Jitter prevents 20 boxes from

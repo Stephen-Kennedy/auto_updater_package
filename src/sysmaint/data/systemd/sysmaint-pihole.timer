@@ -1,6 +1,6 @@
 [Unit]
 Description=Run sysmaint Pi-hole update monthly
-Documentation=https://github.com/Stephen-Kennedy/sysmaint
+Documentation=https://github.com/Stephen-Kennedy/auto_updater_package
 
 [Timer]
 # First Sunday of each month at 04:00 + 1h jitter.

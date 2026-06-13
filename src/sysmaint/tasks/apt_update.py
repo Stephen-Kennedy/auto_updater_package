@@ -184,8 +184,8 @@ def _render_body(
 
     lines.append("--- Commands ---")
     for r in outcome.results:
-        status = "OK" if r.succeeded else f"FAIL exit={r.returncode}"
-        lines.append(f"  [{status}] {r.duration:5.1f}s  {r.pretty_command()}")
+        cmd_status = "OK" if r.succeeded else f"FAIL exit={r.returncode}"
+        lines.append(f"  [{cmd_status}] {r.duration:5.1f}s  {r.pretty_command()}")
         if not r.succeeded:
             err = r.stderr.strip()
             if err:
@@ -226,9 +226,9 @@ def _render_body(
 
     lines.append("--- Service health ---")
     for service in config.monitor.services:
-        status = system.get_service_status(service)
-        marker = "OK" if status.active else "DOWN"
-        lines.append(f"  [{marker}] {service:20s} {status.state}")
+        svc_status = system.get_service_status(service)
+        marker = "OK" if svc_status.active else "DOWN"
+        lines.append(f"  [{marker}] {service:20s} {svc_status.state}")
     lines.append("")
 
     if reboot_needed:

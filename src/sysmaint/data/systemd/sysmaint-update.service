@@ -1,12 +1,14 @@
 [Unit]
 Description=sysmaint weekly maintenance run
-Documentation=https://github.com/Stephen-Kennedy/sysmaint
+Documentation=https://github.com/Stephen-Kennedy/auto_updater_package
 # Wait for the network so apt mirrors are reachable; without this the
 # service can fire on a freshly-booted box before NetworkManager is up.
 After=network-online.target
 Wants=network-online.target
-# Avoid stepping on apt's lock if another package operation is in flight.
-ConditionPathExists=!/var/lib/dpkg/lock-frontend
+# Note: do NOT add `ConditionPathExists=!/var/lib/dpkg/lock-frontend` —
+# that file is created at boot and persists, so the negated check would
+# skip every run. apt-get manages its own lock; the /run/sysmaint.lock
+# flock in core/lock.py prevents two sysmaint runs from overlapping.
 
 [Service]
 Type=oneshot

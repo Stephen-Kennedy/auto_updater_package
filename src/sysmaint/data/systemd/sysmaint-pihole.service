@@ -1,6 +1,6 @@
 [Unit]
 Description=sysmaint Pi-hole update
-Documentation=https://github.com/Stephen-Kennedy/sysmaint
+Documentation=https://github.com/Stephen-Kennedy/auto_updater_package
 After=network-online.target
 Wants=network-online.target
 

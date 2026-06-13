@@ -42,7 +42,7 @@ in your inbox.
 
 ```bash
 sudo apt install -y pipx
-sudo pipx install --global git+https://github.com/Stephen-Kennedy/sysmaint.git
+sudo pipx install --global git+https://github.com/Stephen-Kennedy/auto_updater_package.git
 sudo sysmaint install
 ```
 
@@ -171,8 +171,8 @@ sudo pipx uninstall --global sysmaint
 ## Development
 
 ```bash
-git clone https://github.com/Stephen-Kennedy/sysmaint
-cd sysmaint
+git clone https://github.com/Stephen-Kennedy/auto_updater_package
+cd auto_updater_package
 python3.11 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 pytest                  # 81 tests, ~2s
