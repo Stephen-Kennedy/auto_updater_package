@@ -1,0 +1,18 @@
+[Unit]
+Description=Run sysmaint weekly maintenance every Sunday
+Documentation=https://github.com/Stephen-Kennedy/auto_updater_package
+
+[Timer]
+# Every Sunday at 03:00 + up to 2h jitter. Jitter prevents 20 boxes from
+# all hammering Gmail (and our apt mirror) at exactly :00.
+OnCalendar=Sun *-*-* 03:00:00
+RandomizedDelaySec=2h
+# If the box was off when the timer should have fired, run as soon as
+# it's back up. Critical for home-lab boxes that aren't 24/7.
+Persistent=true
+# Belt-and-suspenders: the service itself has TimeoutStartSec=2h too.
+AccuracySec=1min
+Unit=sysmaint-update.service
+
+[Install]
+WantedBy=timers.target
